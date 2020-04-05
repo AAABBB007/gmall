@@ -1,0 +1,33 @@
+# 端口
+server:
+  port: 8090
+
+#
+logging:
+  level:
+    com.wl.gmalluser: debug
+  file: myLog.log
+
+#Spring的配置 JDBC
+spring:
+  datasource:
+    #驱动
+    driver-class-name: com.mysql.jdbc.Driver
+    #数据库连接
+    url: jdbc:mysql://127.0.0.1:3306/gmall?useSSL=false&serverTimezone=UTC
+    #用户名
+    username: root
+    #密码
+    password: root
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 0
+    database: 0
+#
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true  # 驼峰匹配
+  mapper-locations: classpath:mappers/*Mapper.xml  # mapper文件路径
+  type-aliases-package: com.wl.gmalluser
